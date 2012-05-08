@@ -9,14 +9,19 @@
 
 ---
 
-#home:
-#  rewrite: "/"
-#  method: "get"
-#  actual: "Home"
+home:
+  rewrite: "/"
+  method: "get"
+  actual: "Home"
 
-#themeSwitch:
-#  rewrite: "/theme/switch/{theme}"
-#  actual: "ThemeSwitch"
-#  params:
-#    theme: "([a-zA-Z0-9]+)"
+themeSwitch:
+  rewrite: "/theme/switch/{theme}"
+  actual: "ThemeSwitch"
+  params:
+    theme: "([a-zA-Z0-9]+)"
+    
+scaffold:
+  rewrite: "/build"
+  actual: "packfire.scaffold.pScaffolder"
+  
 ...
