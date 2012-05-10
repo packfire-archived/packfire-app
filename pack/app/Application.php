@@ -1,5 +1,5 @@
 <?php
-pload('packfire.pApplication');
+pload('packfire.application.pApplication');
 
 /**
  * The application
