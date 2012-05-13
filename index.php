@@ -14,7 +14,7 @@
 /**
  * Location of the Packfire class
  */
-define('__PACKFIRE_PATH__', '../packfire');
+define('__PACKFIRE_PATH__', '{{packfirePath}}');
 
 /**
  * Set the application environment.
