@@ -13,8 +13,8 @@ pload('packfire.security.pSecurityModule');
  */
 class AppSecurityModule extends pSecurityModule {
     
-    public function authenticate($token) {
-        return parent::authenticate($token);
+    public function authenticate() {
+        return parent::authenticate();
     }
 
     public function authorize($route) {
