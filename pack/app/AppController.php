@@ -24,8 +24,12 @@ abstract class AppController extends pController {
                 $name = substr($name, 0, strlen($name) - 10);
             }
             $class = $name . ucfirst($func) . 'View';
-            pload('view.' . strtolower($name) . '.' . $class);
-            pload('view.' . $class);
+            try{
+                pload('view.' . strtolower($name) . '.' . $class);
+                pload('view.' . $class);
+            }catch(pInvalidRequestException $ex){
+                
+            }
             if(class_exists($class)){
                 $view = new $class();
             }
