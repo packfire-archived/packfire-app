@@ -4,6 +4,8 @@ pload('packfire.controller.pValidationFilter');
 pload('packfire.validator.pMatchValidator');
 
 /**
+ * ThemeSwitchController class
+ * 
  * Switches between themes
  *
  * @author Sam-Mauris Yong / mauris@hotmail.sg

@@ -2,7 +2,9 @@
 pload('app.AppView');
 
 /**
- * HomeView
+ * HomeIndexView class
+ * 
+ * View for the homepage
  *
  * @author Sam-Mauris Yong / mauris@hotmail.sg
  * @license http://www.opensource.org/licenses/bsd-license New BSD License

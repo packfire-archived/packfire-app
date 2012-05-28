@@ -1,7 +1,10 @@
 <?php
+pload('packfire.view.pTheme');
 
 /**
- * Light Theme
+ * LightTheme class
+ * 
+ * Provides rendering for light theme
  *
  * @author Sam-Mauris Yong / mauris@hotmail.sg
  * @copyright Copyright (c) 2010-2012, Sam-Mauris Yong
@@ -9,7 +12,7 @@
  * @package candice.theme
  * @since 1.0-sofia
  */
-class LightTheme extends AppTheme {
+class LightTheme extends pTheme {
     
     public function render() {
         $this->define('style', 'light');

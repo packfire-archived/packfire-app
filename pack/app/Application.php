@@ -2,6 +2,8 @@
 pload('packfire.application.pApplication');
 
 /**
+ * Application class
+ * 
  * The application
  *
  * @author Sam-Mauris Yong / mauris@hotmail.sg

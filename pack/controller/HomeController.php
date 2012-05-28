@@ -2,6 +2,8 @@
 pload('app.AppController');
 
 /**
+ * HomeController class
+ * 
  * Handles interaction for home
  *
  * @author Sam-Mauris Yong / mauris@hotmail.sg

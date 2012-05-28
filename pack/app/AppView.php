@@ -4,6 +4,8 @@ pload('AppTemplate');
 pload('AppTheme');
 
 /**
+ * AppView class
+ * 
  * The generic application view class
  *
  * @author Sam-Mauris Yong / mauris@hotmail.sg
@@ -14,6 +16,10 @@ pload('AppTheme');
  */
 abstract class AppView extends pView {
     
+    /**
+     * Create a new AppView object
+     * @since 1.0-sofia 
+     */
     public function __construct(){
         parent::__construct();
         
@@ -25,6 +31,13 @@ abstract class AppView extends pView {
         $this->template($template);
     }
     
+    /**
+     * Set the template for the view class
+     * @param ITemplate|string $template The template or name of the template
+     *          to set for the view class.
+     * @return AppView Returns the object for chaining
+     * @since 1.0-sofia
+     */
     protected function template($template) {
         if(is_string($template)){
             $template = AppTemplate::load($template);
@@ -32,6 +45,13 @@ abstract class AppView extends pView {
         return parent::template($template);
     }
 
+    /**
+     * Set the theme for the view class
+     * @param pTheme|string $theme The theme or the name of the theme class to
+     *          set to the view class
+     * @return AppView Returns the object for chaining
+     * @since 1.0-sofia
+     */
     protected function theme($theme) {
         if(is_string($theme)){
             $theme = AppTheme::load($theme);
