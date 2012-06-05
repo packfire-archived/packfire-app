@@ -1,3 +1,10 @@
+# Deny public access to the pack folder
+<Directory /pack>
+    Order deny,allow
+    Deny from all
+</Directory>
+
+# perform rewrite operations to FCP
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f

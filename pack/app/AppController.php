@@ -1,5 +1,6 @@
 <?php
 pload('packfire.controller.pController');
+pload('packfire.exception.pMissingDependencyException');
 
 /**
  * AppController class
@@ -28,15 +29,22 @@ abstract class AppController extends pController {
             $class = $name . ucfirst($func) . 'View';
             try{
                 pload('view.' . strtolower($name) . '.' . $class);
-                pload('view.' . $class);
-            }catch(pInvalidRequestException $ex){
-                
+            }catch(pMissingDependencyException $ex){
+                try{
+                    pload('view.' . $class);
+                }catch(pMissingDependencyException $ex){
+                    
+                }
             }
             if(class_exists($class)){
                 $view = new $class();
             }
         }
-        parent::render($view);
+        if($view){
+            parent::render($view);
+        }else{
+            throw new pMissingDependencyException('View not rendered because not found.');
+        }
     }
     
 }
