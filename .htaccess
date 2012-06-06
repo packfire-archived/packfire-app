@@ -1,8 +1,3 @@
-# Deny public access to the pack folder
-<Directory /pack>
-    Order deny,allow
-    Deny from all
-</Directory>
 
 # perform rewrite operations to FCP
 <IfModule mod_rewrite.c>
@@ -10,6 +5,11 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-l
+    
+    # the usual access
+    RewriteRule ^(.*)/*$ index.php?_urlroute_=$1 [L,QSA]
 
-    RewriteRule ^(.*)\?*$ index.php?_urlroute_=$1 [L,QSA]
+    # prevent access to application files
+    RewriteRule ^pack(.*)/*$ index.php?_urlroute_=pack$1 [L,QSA]
+
 </IfModule>
