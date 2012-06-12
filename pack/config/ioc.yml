@@ -24,9 +24,10 @@ logger:
   class: packfire.log.pLogger
   parameters: 
     - 'pack/storage/log/default.log'
-session.storage.default:
+session.storage:
   class: packfire.session.storage.pSessionStorage
   parameters: []
-    
+cache:
+  class: packfire.cache.pFileCache
 
 ...

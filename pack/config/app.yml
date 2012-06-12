@@ -27,6 +27,7 @@ session:
 
 routing:
   enabled: true
+  caching: true
 
 database:
 #  default: 
