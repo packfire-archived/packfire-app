@@ -2,7 +2,7 @@
 pload('packfire.security.pSecurityModule');
 
 /**
- * AppSecurityModule
+ * AppSecurityModule class
  * 
  * The application's security module
  * Configure by overriding the appropriate methods.
@@ -26,10 +26,5 @@ class AppSecurityModule extends pSecurityModule {
     public function deauthenticate() {
         parent::deauthenticate();
     }
-
-    public function identity($newIdentity = null) {
-        return parent::identity($newIdentity);
-    }
-
     
 }
