@@ -20,9 +20,6 @@
 # the messenger service
 messenger:
   class: packfire.session.pMessenger
-
-form.feedback:
-  class: packfire.form.pFormFeedback
   
 #configure the logging functionality
 logger:
