@@ -12,16 +12,12 @@
 home:
   rewrite: "/"
   method: "get"
-  actual: "Home"
+  actual: "packfire.welcome.HomeController"
 
 themeSwitch:
   rewrite: "/theme/switch/{theme}"
-  actual: "ThemeSwitch"
+  actual: "packfire.welcome.ThemeSwitchController"
   params:
     theme: "([a-zA-Z0-9]+)"
-    
-scaffold:
-  rewrite: "/build"
-  actual: "packfire.scaffold.pScaffolder"
   
 ...
