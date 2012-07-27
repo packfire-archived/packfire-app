@@ -10,8 +10,8 @@
 ---
 
 app:
-  name: "Packfire Framework for PHP"
-  version: "1.0-sofia"
+  name: "Welcome to Packfire Framework"
+  version: "1.0"
   rootUrl: "http://localhost/packfire"
   debug: false
 
