@@ -1,3 +1,4 @@
 @echo off
 REM Packfire Application's CLI access shell script for Windows
-php %0.php %*
+SET THISDIR = %~dp0
+php %THISDIR%torch.php %*
