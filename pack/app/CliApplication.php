@@ -12,7 +12,7 @@ pload('packfire.application.cli.pCliApplication');
  * @package packfire.app
  * @since 1.0-sofia
  */
-class Application extends pCliApplication {
+class CliApplication extends pCliApplication {
     
     
     
