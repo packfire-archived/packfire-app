@@ -1,0 +1,3 @@
+#!/bin/bash
+# Packfire Application's CLI access shell script for Linux
+php $0.php $@
