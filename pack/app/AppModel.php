@@ -1,5 +1,5 @@
 <?php
-pload('packfire.pModel');
+pload('packfire.model.pModel');
 
 /**
  * AppModel class
