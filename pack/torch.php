@@ -12,9 +12,9 @@
  */
 
 include('constants.php');
+
 define('__APP_ROOT__', pathinfo(__DIR__, PATHINFO_DIRNAME) . DIRECTORY_SEPARATOR);
-$ok = include(__PACKFIRE_PATH__ . '/Packfire.php');
-if($ok){
+if(include(__PACKFIRE_PATH__ . '/Packfire.php')){
     pload('app.CliApplication');
     // IMMA FIRIN' MA LAZOR
     $packfire = new Packfire();

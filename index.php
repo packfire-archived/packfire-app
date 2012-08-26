@@ -12,9 +12,9 @@
  */
 
 include('pack/constants.php');
+
 // include the main Packfire class
-$ok = include(__PACKFIRE_PATH__ . '/Packfire.php');
-if($ok){
+if(include(__PACKFIRE_PATH__ . '/Packfire.php')){
     pload('app.Application');
     // IMMA FIRIN' MA LAZOR
     $packfire = new Packfire();
