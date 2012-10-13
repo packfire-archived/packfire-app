@@ -7,15 +7,12 @@
  * Packfire and PHPUnit integration.
  *
  * @author Sam-Mauris Yong / mauris@hotmail.sg
- * @copyright Copyright (c) 2010-2012, Sam-Mauris Yong
- * @license http://www.opensource.org/licenses/bsd-license New BSD License
- * @since 1.0-sofia
  */
 
-chdir('./../..');
+define('__PACKFIRE_START__', microtime(true));
+define('__APP_ROOT__', '');
 
-define('__PACKFIRE_PATH__', '{{packfirePath}}');
-define('__APP_ROOT__', getcwd() . DIRECTORY_SEPARATOR);
-
-ob_start();
-include(__PACKFIRE_PATH__ . '/Packfire.php');
+$namespaces = require('vendor/composer/autoload_namespaces.php');
+$path = $namespaces['Packfire'];
+require $path . DIRECTORY_SEPARATOR . 'Packfire.php';
+$packfire = new Packfire\Packfire();
