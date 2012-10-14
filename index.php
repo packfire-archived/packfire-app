@@ -14,11 +14,8 @@
 include('pack/constants.php');
 
 // include the main Packfire class
-if(include(__PACKFIRE_PATH__ . '/Packfire.php')){
-    pload('app.Application');
-    // IMMA FIRIN' MA LAZOR
-    $packfire = new Packfire();
-    $packfire->fire(new Application());
-}else{
-    
-}
+$namespaces = require('pack/vendor/composer/autoload_namespaces.php');
+$path = $namespaces['Packfire'];
+require $path . DIRECTORY_SEPARATOR . 'Packfire\Packfire.php';
+$packfire = new Packfire\Packfire();
+$packfire->fire(new Packfire\Application\Http\Application());
