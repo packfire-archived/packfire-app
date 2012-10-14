@@ -12,11 +12,6 @@
  */
 
 /**
- * Location of the Packfire class
- */
-define('__PACKFIRE_PATH__', '{{packfirePath}}');
-
-/**
  * Set the application environment.
  * Determines what configuration files to be loaded. 
  */
