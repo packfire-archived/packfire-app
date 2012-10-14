@@ -12,11 +12,11 @@
 home:
   rewrite: "/"
   method: "get"
-  actual: "packfire.welcome.HomeController"
+  actual: "Packfire\Welcome\HomeController"
 
 themeSwitch:
   rewrite: "/theme/switch/{theme}"
-  actual: "packfire.welcome.ThemeSwitchController"
+  actual: "Packfire\Welcome\ThemeSwitchController"
   params:
     theme: "regex/`(dark|light)`"
   

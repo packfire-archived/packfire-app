@@ -10,7 +10,7 @@
 ---
 
 home:
-  actual: "packfire.welcome.HomeController"
+  actual: "Packfire\Welcome\HomeController"
   params:
     
   
