@@ -14,5 +14,5 @@ define('__APP_ROOT__', '');
 
 $namespaces = require('vendor/composer/autoload_namespaces.php');
 $path = $namespaces['Packfire'];
-require $path . DIRECTORY_SEPARATOR . 'Packfire.php';
+require $path . DIRECTORY_SEPARATOR . 'Packfire\Packfire.php';
 $packfire = new Packfire\Packfire();
