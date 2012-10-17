@@ -11,11 +11,24 @@
  * @ignore
  */
 
-include('pack/constants.php');
+require('pack/constants.php');
 
-// include the main Packfire class
-$namespaces = require('pack/vendor/composer/autoload_namespaces.php');
-$path = $namespaces['Packfire'];
-require $path . DIRECTORY_SEPARATOR . 'Packfire\Packfire.php';
-$packfire = new Packfire\Packfire();
-$packfire->fire(new Packfire\Application\Http\Application());
+$path = null;
+if(__PACKFIRE_ROOT__){
+    $path = __PACKFIRE_ROOT__;
+}else{
+    $namespaces = require('vendor/composer/autoload_namespaces.php');
+    if($namespaces){
+        $path = $namespaces['Packfire'];
+    }
+}
+
+if($path){
+    // include the main Packfire class
+    require $path . DIRECTORY_SEPARATOR . 'Packfire\Packfire.php';
+    $packfire = new Packfire\Packfire();
+    $packfire->classLoader()->register();
+    $packfire->fire(new Packfire\Application\Http\Application());
+}else{
+    throw new \Exception('Could not bootstrap test because Packfire Framework was not installed.');
+}
