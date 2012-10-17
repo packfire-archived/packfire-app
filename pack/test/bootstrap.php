@@ -26,7 +26,7 @@ if(__PACKFIRE_ROOT__){
 if($path){
     require $path . DIRECTORY_SEPARATOR . 'Packfire\Packfire.php';
     $packfire = new Packfire\Packfire();
-    $packfire->classLoader()->register();
+    $packfire->classLoader()->register(true);
 }else{
     throw new \Exception('Could not bootstrap test because Packfire Framework was not installed.');
 }

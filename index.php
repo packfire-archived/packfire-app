@@ -1,4 +1,8 @@
 <?php
+namespace Packfire\Core;
+
+use Packfire\Core\ClassLoader\ClassFinder;
+use Packfire\Core\ClassLoader\ClassLoader;
 
 /**
  * Packfire Application Front Controller for HTTP interface
@@ -27,7 +31,11 @@ if($path){
     // include the main Packfire class
     require $path . DIRECTORY_SEPARATOR . 'Packfire\Packfire.php';
     $packfire = new Packfire\Packfire();
-    $packfire->classLoader()->register();
+    $packfire->classLoader()->register(true);
+    $finder = new ClassFinder();
+    $finder->addNamespace('', 'pack/src/');
+    $loader = new ClassLoader($finder);
+    $loader->register(true);
     $packfire->fire(new Packfire\Application\Http\Application());
 }else{
     throw new \Exception('Could not bootstrap test because Packfire Framework was not installed.');
