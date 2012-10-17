@@ -20,3 +20,5 @@ if(getenv('PACKFIRE_ENV')){
 }else{
     define('__ENVIRONMENT__' , '');
 }
+
+define('__PACKFIRE_ROOT__', '');
