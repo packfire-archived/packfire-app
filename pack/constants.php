@@ -15,4 +15,8 @@
  * Set the application environment.
  * Determines what configuration files to be loaded. 
  */
-define('__ENVIRONMENT__' , '');
+if(getenv('PACKFIRE_ENV')){
+    define('__ENVIRONMENT__' , getenv('PACKFIRE_ENV'));
+}else{
+    define('__ENVIRONMENT__' , '');
+}
