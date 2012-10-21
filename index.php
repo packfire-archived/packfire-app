@@ -2,8 +2,6 @@
 namespace Packfire\Core;
 
 use Packfire\Packfire;
-use Packfire\Core\ClassLoader\ClassFinder;
-use Packfire\Core\ClassLoader\ClassLoader;
 use Packfire\Application\Http\Application as HttpApplication;
 
 /**
@@ -30,14 +28,11 @@ if(__PACKFIRE_ROOT__){
 }
 
 if($path){
+    define('__PACKFIRE_START__', microtime(true));
     // include the main Packfire class
     require $path . '/Packfire/Packfire.php';
     $packfire = new Packfire();
     $packfire->classLoader()->register(true);
-    $finder = new ClassFinder();
-    $finder->addPath('pack/src/');
-    $loader = new ClassLoader($finder);
-    $loader->register(true);
     $packfire->fire(new HttpApplication());
 }else{
     throw new \Exception('Could not bootstrap test because Packfire Framework was not installed.');
