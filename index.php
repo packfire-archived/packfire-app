@@ -17,10 +17,7 @@ use Packfire\Application\Http\Application as HttpApplication;
 
 require('pack/constants.php');
 
-$path = null;
-if(__PACKFIRE_ROOT__){
-    $path = __PACKFIRE_ROOT__;
-}else{
+if(!($path = __PACKFIRE_ROOT__)){
     $namespaces = require('vendor/composer/autoload_namespaces.php');
     if($namespaces){
         $path = $namespaces['Packfire'];
@@ -35,5 +32,5 @@ if($path){
     $packfire->classLoader()->register(true);
     $packfire->fire(new HttpApplication());
 }else{
-    throw new \Exception('Could not bootstrap test because Packfire Framework was not installed.');
+    throw new \Exception('Could not bootstrap because Packfire Framework was not installed.');
 }
