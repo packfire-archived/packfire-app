@@ -15,7 +15,7 @@
 #    - param2
 
 #security: # the security module is optional. The default security module does not identify or authenticate the users
-#  class: app.AppSecurityModule
+#  class: Packfire\Security\SecurityModule
 
 # the messenger service
 messenger:
