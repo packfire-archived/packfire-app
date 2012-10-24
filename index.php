@@ -18,7 +18,7 @@ use Packfire\Application\Http\Application as HttpApplication;
 require('pack/constants.php');
 
 if(!($path = __PACKFIRE_ROOT__)){
-    $namespaces = require('vendor/composer/autoload_namespaces.php');
+    $namespaces = require('pack/vendor/composer/autoload_namespaces.php');
     if($namespaces){
         $path = $namespaces['Packfire'];
     }
