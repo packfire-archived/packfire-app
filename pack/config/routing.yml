@@ -18,6 +18,6 @@ themeSwitch:
   rewrite: "/theme/switch/{theme}"
   actual: "Packfire\Welcome\ThemeSwitchController"
   params:
-    theme: "regex/`(dark|light)`"
-  
+    theme: "regex:{dark|light}"
+
 ...
