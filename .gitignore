@@ -1,4 +1,4 @@
 pack/vendor
 composer.phar
 pack/phpunit.xml
-pack/constants.xml
+pack/constants.php
