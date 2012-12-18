@@ -10,14 +10,13 @@
  */
 
 define('__PACKFIRE_START__', microtime(true));
-define('__APP_ROOT__', '');
 
-require 'constants.php';
+require(dirname(__DIR__) . '/constants.php');
 $path = null;
 if(__PACKFIRE_ROOT__){
     $path = __PACKFIRE_ROOT__;
 }else{
-    $namespaces = include('vendor/composer/autoload_namespaces.php');
+    $namespaces = include(dirname(__DIR__) . '/vendor/composer/autoload_namespaces.php');
     if($namespaces){
         $path = $namespaces['Packfire'];
     }
