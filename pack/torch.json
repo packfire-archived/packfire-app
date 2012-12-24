@@ -1,0 +1,14 @@
+{
+	"assets":[
+		{
+			"file": "../assets/images/packfire.biglogo.dark.png",
+			"source": "http://i.imgur.com/Of3Li.png",
+			"version": "1.0"
+		},
+		{
+			"file": "../assets/images/packfire.biglogo.light.png",
+			"source": "http://i.imgur.com/97oLX.png",
+			"version": "1.0"
+		}
+	]
+}
