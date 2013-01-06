@@ -15,19 +15,32 @@ use Packfire\Application\Http\Application as HttpApplication;
  * @ignore
  */
 
-require('pack/constants.php');
+$paths = array(
+        'env' => __DIR__ . '/pack/env',
+        'composer' => __DIR__ . '/pack/vendor/composer/autoload_namespaces.php',
+        'packfire' => __DIR__ . '/pack/packfire'
+    );
 
-if(!($path = __PACKFIRE_ROOT__)){
-    $namespaces = require('pack/vendor/composer/autoload_namespaces.php');
+if(file_exists($paths['env'])){
+    define('__ENVIRONMENT__' , file_get_contents($paths['env']));
+}else{
+    define('__ENVIRONMENT__' , getenv('PACKFIRE_ENV'));
+}
+
+$path = null;
+if(file_exists($paths['composer'])){
+    $namespaces = include($paths['composer']);
     if($namespaces){
-        $path = $namespaces['Packfire'];
+        $paths['packfire'] = $namespaces['Packfire'];
     }
+}elseif(file_exists($paths['packfire'])){
+    $path = file_get_contents($paths['packfire']);
 }
 
 if($path){
     define('__PACKFIRE_START__', microtime(true));
     // include the main Packfire class
-    require $path . '/Packfire/Packfire.php';
+    require($path . '/Packfire/Packfire.php');
     $packfire = new Packfire();
     $packfire->classLoader()->register(true);
     $packfire->fire(new HttpApplication());
