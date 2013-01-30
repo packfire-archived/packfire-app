@@ -12,9 +12,9 @@ use Packfire\Packfire;
  */
 
 $paths = array(
-        'env' => __DIR__ . '/pack/env',
-        'composer' => __DIR__ . '/pack/vendor/composer/autoload_namespaces.php',
-        'packfire' => __DIR__ . '/pack/packfire'
+        'env' => __DIR__ . '/env',
+        'composer' => __DIR__ . '/vendor/composer/autoload_namespaces.php',
+        'packfire' => __DIR__ . '/packfire'
     );
 
 if(file_exists($paths['env'])){
