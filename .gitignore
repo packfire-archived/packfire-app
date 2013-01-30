@@ -1,3 +1,5 @@
 pack/vendor
-composer.phar
+*.phar
 pack/phpunit.xml
+pack/env
+pack/packfire
