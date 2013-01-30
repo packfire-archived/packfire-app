@@ -13,7 +13,7 @@ use Packfire\Packfire;
 
 $paths = array(
         'env' => __DIR__ . '/env',
-        'composer' => __DIR__ . '/vendor/composer/autoload_namespaces.php',
+        'composer' => __DIR__ . '/vendor/autoload.php',
         'packfire' => __DIR__ . '/packfire'
     );
 
@@ -24,19 +24,18 @@ if(file_exists($paths['env'])){
 }
 
 $path = null;
-if(file_exists($paths['composer'])){
-    $namespaces = include($paths['composer']);
-    if($namespaces){
-        $paths['packfire'] = $namespaces['Packfire'];
-    }
-}elseif(file_exists($paths['packfire'])){
+if(file_exists($paths['packfire'])){
     $path = file_get_contents($paths['packfire']);
+    require($path . '/Packfire/Packfire.php');
+}
+
+if(file_exists($paths['composer'])){
+    require(__DIR__ . '/vendor/autoload.php');
 }
 
 if($path){
     define('__PACKFIRE_START__', microtime(true));
     // include the main Packfire class
-    require($path . '/Packfire/Packfire.php');
     $packfire = new Packfire();
     $packfire->classLoader()->register(true);
     return $packfire;
