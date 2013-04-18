@@ -13,7 +13,8 @@ use Packfire\Packfire;
 
 $paths = array(
         'env' => __DIR__ . '/env',
-        'packfire' => __DIR__ . '/packfire'
+        'packfire' => __DIR__ . '/packfire',
+        'composer' => __DIR__ . '/vendor'
     );
 
 if(file_exists($paths['env'])){
@@ -28,10 +29,13 @@ if(file_exists($paths['packfire'])){
     require($path . '/Packfire/Packfire.php');
 }
 
+if(is_dir($paths['composer'])){
+    $path = true;
+    require($paths['composer'] . '/autoload.php');
+}
+
 if($path){
     define('__PACKFIRE_START__', microtime(true));
     return new Packfire();
-}else{
-    throw new \Exception('Could not bootstrap because Packfire Framework was not installed.');
 }
-return null;
+throw new \Exception('Could not bootstrap because Packfire Framework was not installed.');
