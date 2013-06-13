@@ -10,8 +10,6 @@
 ---
 
 app:
-  name: "Welcome to Packfire Framework"
-  version: "1.0"
   rootUrl: "http://localhost/packfire"
   debug: false
 
@@ -28,6 +26,7 @@ session:
   secure: false
 
 routing:
+  routes: "routing.yml"
   enabled: true
   caching: true
 
