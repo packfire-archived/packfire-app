@@ -14,7 +14,7 @@
 app:
   debug: true
 
-routing:
+router:
   caching: false
 
 ...
