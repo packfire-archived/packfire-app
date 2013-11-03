@@ -12,9 +12,10 @@
 ---
 
 app:
+  rootUrl: 'http://packfire.dev'
   debug: true
 
-routing:
+router:
   caching: false
 
 ...
