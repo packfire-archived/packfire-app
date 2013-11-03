@@ -36,6 +36,7 @@ if(is_dir($paths['composer'])){
 
 if($path){
     define('__PACKFIRE_START__', microtime(true));
+    define('__APP_ROOT__', __DIR__);
     return new Packfire();
 }
 throw new \Exception('Could not bootstrap because Packfire Framework was not installed.');
