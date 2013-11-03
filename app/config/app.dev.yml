@@ -12,6 +12,7 @@
 ---
 
 app:
+  rootUrl: 'http://packfire.dev'
   debug: true
 
 router:
