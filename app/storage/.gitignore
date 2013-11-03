@@ -1,0 +1,6 @@
+cache/*
+log/*
+temp/*
+!cache/readme.md
+!log/readme.md
+!temp/readme.md
