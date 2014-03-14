@@ -1,16 +1,8 @@
 #Packfire Application
 
-This is an instance of an application building on [Packfire Framework for PHP](http://mauris.sg/packfire/).
+This is an instance of an application that uses [Packfire Framework for PHP](https://github.com/packfire/packfire-framework).
 
-You may clone or download and extract this repository to start development on your Packfire Framework Application.
-
-##Setup
-1. Git clone or [download a copy](https://github.com/packfire/packfire-app/releases/tag/2.1) of the application.
-2. Set your web server root to the 'web' folder
-3. Perform a [`composer install`](https://getcomposer.org/) in the 'app' folder to install Packfire Framework and its dependicies. 
-4. When done, configure the `rootUrl` config in `app/config/app.dev.yml` to the right URL.
-5. Create a file in `app` folder named `env` with just the characters `dev` in the file.
-6. Open the app in your browser and you should find a working welcome page. 
+More information coming soon.
 
 ##License
 
