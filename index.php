@@ -1,7 +1,8 @@
 <?php
 
-$app_dir = __DIR__ . '/..';
-$packfire = require($app_dir . '/app/bootstrap.php');
-if ($packfire) {
-    $packfire->fire(new HttpApplication());
-}
+use Packfire\Framework\Bootstrap;
+
+require(__DIR__ . '/vendor/autoload.php');
+
+$bootstrap = new Bootstrap();
+$bootstrap->run();
